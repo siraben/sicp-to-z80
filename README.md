@@ -24,9 +24,8 @@ nicest language).
 - cons cells, memory allocation, perhaps GC?
 - Multiple-valued tests `(test (op >) (reg foo) (reg bar) (reg baz))`
 - Compiler optimizations
-
-  [ ] Collapse tests with constant values `(test (op =) (const 3) (const 4))`.
-  [ ] Don't allocate unused registers.
-  [ ] Loop unrolling.
-  [ ] Don't compile programs that go into an infinite loop!
+  - [ ] Collapse tests with constant values `(test (op =) (const 3) (const 4))`.
+  - [ ] Don't allocate unused registers.
+  - [ ] Loop unrolling.
+  - [ ] Don't compile programs that go into an infinite loop!
 
