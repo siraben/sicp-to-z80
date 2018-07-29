@@ -16,6 +16,25 @@ nicest language).
 - All the headache of SICP register machine language without the
   headache of Z80.
 
+## How to use
+First, define a program with `define-program` or just plain, old `define`.
+Since `print-string` is actually a macro, you must use `,@` (or,
+`unquote-splicing`) so that the generated code is placed inline.
+
+```scheme
+(define hello-world
+  `(,@(print-string "hello, world!")))
+```
+Then compile it with `compile-prog`.
+```scheme
+(compile-prog hello-world)
+```
+To upload this program to your TI-84, you'll need to assemble it. Use an
+assembler like [spasm-ng](https://github.com/alberthdev/spasm-ng).
+
+See `compiler.scm` for some more example programs, some of which work,
+and some of which don't!
+
 ## Currently not implemented/Broken
 - Equality testing of 32-bit numbers is broken `(test (op =) (reg foo) (reg bar))`.
 - Arithmetic operations on 32-bit numbers.
