@@ -228,6 +228,7 @@
          (let ((var (const-name exp)))
            (cond ((number? var)
                   (emit-no-newline "~a" (symbol-for-num var)))
+                 ;; Symbols and booleans aren't supported.
                  ((symbol? var)
                   (emit-no-newline "make_symbol(~a)" var))
                  ((boolean? var)
@@ -241,6 +242,7 @@
   (cond ((const? exp)
          (let ((var (const-name exp)))
            (cond ((number? var) (symbol-for-num var))
+                 ;; Symbols and booleans aren't supported.
                  ((symbol? var)
                   (emit-no-newline "make_symbol(~a)" var))
                  ((boolean? var)
